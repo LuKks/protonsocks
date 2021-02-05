@@ -1,0 +1,16 @@
+Dockerfile
+docker-compose*
+.dockerignore
+
+.git
+.gitignore
+
+node_modules
+npm-debug.log
+
+#build
+
+.DS_Store
+.vscode
+.env
+README.md

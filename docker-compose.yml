@@ -1,0 +1,29 @@
+version: '3.7'
+
+services:
+  protonvpn:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    ports: ['1090:1080']
+    env_file:
+      - config.env
+    #volumes:
+      #- ./resolv.conf:/etc/resolv.conf:ro
+    privileged: true
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    cap_add:
+      - NET_ADMIN
+    dns: ['1234.1234.1234.1234']
+    sysctls:
+      net.ipv6.conf.all.disable_ipv6: 1
+      net.ipv6.conf.default.disable_ipv6: 1
+      net.ipv6.conf.lo.disable_ipv6: 1
+      net.ipv6.conf.eth0.disable_ipv6: 1
+    healthcheck:
+      disable: true
+    logging:
+      options:
+        max-size: "2m"
+        max-file: "10"
