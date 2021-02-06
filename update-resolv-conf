@@ -63,16 +63,29 @@ up)
   #echo -n "$R" | $RESOLVCONF -x -p -a "${dev}"
   echo -n "$R" | $RESOLVCONF -x -a "${dev}.inet"
 
-  #
   # dev is proton0
-  proton_network=`ip addr show ${dev} | grep inet`
-  # should check for "does not exist"
+  echo 'dev'
+  echo ${dev}
+
+  # allow internal vpn traffic
+  proton_network=`ip addr show ${dev} | grep inet` # should check for "does not exist"
   proton_network=(${proton_network//;/ }) # split by space
   proton_network=(${proton_network[1]})
-  iptables -A INPUT -i ${dev} -s ${proton_network} -j ACCEPT
-  iptables -A OUTPUT -o ${dev} -d ${proton_network} -j ACCEPT
+  echo 'proton_network'
+  echo ${proton_network}
 
-  # custom
+  #iptables -A INPUT -i ${dev} -s ${proton_network} -j ACCEPT
+  #iptables -A OUTPUT -o ${dev} -d ${proton_network} -j ACCEPT
+
+  # allow traffic for vpn dns
+  dns_server=`cat /etc/resolv.conf |grep -i '^nameserver'|head -n1|cut -d ' ' -f2`
+  echo 'dns_server'
+  echo ${dns_server}
+
+  #iptables -A INPUT -s ${dns_server} -j ACCEPT
+  #iptables -A OUTPUT -d ${dns_server} -j ACCEPT
+
+  # start socks server
   /opt/danted.sh
   ;;
 down)

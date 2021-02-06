@@ -8,11 +8,10 @@ services:
     ports: ['1090:1080']
     env_file:
       - config.env
-    #volumes:
-      #- ./resolv.conf:/etc/resolv.conf:ro
     privileged: true
     devices:
       - /dev/net/tun:/dev/net/tun
+      - /etc/localtime:/etc/localtime
     cap_add:
       - NET_ADMIN
     dns: ['1234.1234.1234.1234']

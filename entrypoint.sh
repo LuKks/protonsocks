@@ -2,7 +2,6 @@
 
 export $(cat /opt/config.env)
 
-/opt/dns.sh
 /opt/block_ipv6.sh
 /opt/killswitch.sh
 

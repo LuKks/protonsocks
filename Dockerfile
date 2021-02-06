@@ -15,9 +15,6 @@ COPY auth.txt /opt/
 COPY update-resolv-conf /etc/openvpn/
 RUN chmod +x /etc/openvpn/update-resolv-conf
 
-# add empty dns config
-COPY resolv.conf /opt/
-
 # should not leak
 #RUN cat /etc/hosts && true
 
@@ -30,9 +27,6 @@ RUN chmod a+x /opt/block_ipv6.sh
 
 COPY entrypoint.sh /opt/
 RUN chmod a+x /opt/entrypoint.sh
-
-COPY dns.sh /opt/
-RUN chmod a+x /opt/dns.sh
 
 COPY killswitch.sh /opt/
 RUN chmod a+x /opt/killswitch.sh
