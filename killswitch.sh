@@ -14,6 +14,8 @@ iptables -A OUTPUT -d ${PROTONVPN_IP} -p ${PROTONVPN_PROTOCOL} -m ${PROTONVPN_PR
 
 # allow proton0, tcp, 443
 # this part is in update-resolv-conf up:
+#iptables -A INPUT -i lo -j ACCEPT
+#iptables -A OUTPUT -o lo -j ACCEPT
 iptables -A INPUT -i proton0 -j ACCEPT
 iptables -A OUTPUT -o proton0 -j ACCEPT
 iptables -A INPUT -i proton0 -m state --state ESTABLISHED,RELATED -j ACCEPT
