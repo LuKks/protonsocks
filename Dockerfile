@@ -8,7 +8,7 @@ COPY danted.conf /etc/
 COPY danted.sh /opt/
 RUN chmod a+x /opt/danted.sh
 
-COPY any.protonvpn.com.tcp.ovpn /opt/
+COPY any.ovpn /opt/
 COPY config.env /opt/
 COPY auth.txt /opt/
 
