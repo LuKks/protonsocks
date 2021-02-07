@@ -67,6 +67,10 @@ up)
   echo 'dev'
   echo ${dev}
 
+  # R is nameserver 10.83.0.1
+  echo 'R'
+  echo ${R}
+
   # allow internal vpn traffic
   proton_network=`ip addr show ${dev} | grep inet` # should check for "does not exist"
   proton_network=(${proton_network//;/ }) # split by space
@@ -84,6 +88,9 @@ up)
 
   #iptables -A INPUT -s ${dns_server} -j ACCEPT
   #iptables -A OUTPUT -d ${dns_server} -j ACCEPT
+
+  # sometimes the resolv.conf still points to docker bridge dns so:
+  echo "$R" > /etc/resolv.conf
 
   # start socks server
   /opt/danted.sh
