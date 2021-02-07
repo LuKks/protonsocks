@@ -30,10 +30,5 @@ Later you can just build and run in foreground:
 docker-compose up --build
 ```
 
-## Tests
-```
-There is no tests yet.
-```
-
 ## License
 Code released under the [MIT License](https://github.com/LuKks/protonsocks/blob/master/LICENSE).
