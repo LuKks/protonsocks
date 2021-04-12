@@ -18,7 +18,6 @@ RUN chmod +x /etc/openvpn/update-resolv-conf
 # should not leak
 #RUN cat /etc/hosts && true
 
-# disable ipv6
 COPY disable_ipv6.conf /etc/sysctl.d/
 
 COPY entrypoint.sh /opt/
