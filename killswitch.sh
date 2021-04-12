@@ -1,5 +1,3 @@
-export $(cat /opt/config.env)
-
 # empty dns
 echo "" > /etc/resolv.conf
 

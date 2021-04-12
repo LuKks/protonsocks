@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
 
-export $(cat /opt/config.env)
+set -euo pipefail
+
+# get server ip
+export PROTONVPN_IP=$(jq -r ".LogicalServers[] | select(.Name == \"${PROTONVPN_SERVER}\").Servers[0].EntryIP" /opt/servers.json)
+
+if [ -z "$PROTONVPN_IP" ]; then
+  echo "not found server ${PROTONVPN_SERVER}"
+  exit 1
+fi
 
 /opt/killswitch.sh
 
