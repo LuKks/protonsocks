@@ -5,7 +5,9 @@ Dockerized ProtonVPN
 ## Install
 It requires Docker and Docker Compose:
 ```
-sh install-docker.sh
+sudo curl -sS https://get.docker.com/ | sh
+sudo systemctl enable docker
+sudo apt install docker-compose
 ```
 
 Get your OpenVPN / IKEv2 credentials:\
