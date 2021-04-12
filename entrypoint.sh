@@ -4,11 +4,14 @@ set -euo pipefail
 
 # get server ip
 export PROTONVPN_IP=$(jq -r ".LogicalServers[] | select(.Name == \"${PROTONVPN_SERVER}\").Servers[0].EntryIP" /opt/servers.json)
-
 if [ -z "$PROTONVPN_IP" ]; then
   echo "not found server ${PROTONVPN_SERVER}"
   exit 1
 fi
+
+# generate auth file
+echo "${PROTONVPN_USERNAME}" >> /opt/auth.txt
+echo "${PROTONVPN_PASSWORD}" >> /opt/auth.txt
 
 /opt/killswitch.sh
 

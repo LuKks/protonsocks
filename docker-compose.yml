@@ -6,4 +6,6 @@ services:
     ports: ['1090:1080']
     privileged: true
     environment:
+      - PROTONVPN_USERNAME=MhDEyyypW76rpujJSCw63xGTqjk3WlBS
+      - PROTONVPN_PASSWORD=Nuh2vpYKLqe0n8V9slq0EbXLfUpo5ysb
       - PROTONVPN_SERVER=CH-MX#1

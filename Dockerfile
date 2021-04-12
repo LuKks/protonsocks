@@ -1,6 +1,8 @@
 FROM ubuntu:focal
 
-# default server
+# default proton settings
+ENV PROTONVPN_USERNAME=
+ENV PROTONVPN_PASSWORD=
 ENV PROTONVPN_SERVER=CH-MX#1
 ENV PROTONVPN_PORT=443
 ENV PROTONVPN_PROTOCOL=tcp
@@ -13,7 +15,6 @@ COPY danted.sh /opt/
 RUN chmod a+x /opt/danted.sh
 
 COPY any.ovpn /opt/
-COPY auth.txt /opt/
 
 COPY update-resolv-conf /etc/openvpn/
 RUN chmod +x /etc/openvpn/update-resolv-conf
