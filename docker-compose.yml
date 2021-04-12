@@ -6,4 +6,4 @@ services:
     ports: ['1090:1080']
     privileged: true
     environment:
-      - PROTONVPN_SERVER=AR#7
+      - PROTONVPN_SERVER=CH-MX#1
