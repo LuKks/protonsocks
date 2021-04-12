@@ -21,10 +21,6 @@ RUN chmod +x /etc/openvpn/update-resolv-conf
 # disable ipv6
 COPY disable_ipv6.conf /etc/sysctl.d/
 
-# block ipv6
-COPY block_ipv6.sh /opt/
-RUN chmod a+x /opt/block_ipv6.sh
-
 COPY entrypoint.sh /opt/
 RUN chmod a+x /opt/entrypoint.sh
 
