@@ -1,11 +1,11 @@
 FROM ubuntu:focal
 
 # default proton settings
-ENV PROTONVPN_USERNAME=
-ENV PROTONVPN_PASSWORD=
-ENV PROTONVPN_SERVER=CH-UK#1
-ENV PROTONVPN_PORT=443
-ENV PROTONVPN_PROTOCOL=tcp
+ENV PVPN_USERNAME=
+ENV PVPN_PASSWORD=
+ENV PVPN_SERVER=CH-UK#1
+ENV PVPN_PORT=443
+ENV PVPN_PROTOCOL=tcp
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y dante-server openvpn bash openresolv iptables curl jq

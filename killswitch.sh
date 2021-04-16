@@ -38,8 +38,8 @@ iptables -P OUTPUT DROP
 iptables -P FORWARD DROP
 
 # allow only from/to specific proxy server
-iptables -A INPUT -s ${PROTONVPN_IP} -p ${PROTONVPN_PROTOCOL} -m ${PROTONVPN_PROTOCOL} --sport ${PROTONVPN_PORT} -j ACCEPT
-iptables -A OUTPUT -d ${PROTONVPN_IP} -p ${PROTONVPN_PROTOCOL} -m ${PROTONVPN_PROTOCOL} --dport ${PROTONVPN_PORT} -j ACCEPT
+iptables -A INPUT -s ${PVPN_IP} -p ${PVPN_PROTOCOL} -m ${PVPN_PROTOCOL} --sport ${PVPN_PORT} -j ACCEPT
+iptables -A OUTPUT -d ${PVPN_IP} -p ${PVPN_PROTOCOL} -m ${PVPN_PROTOCOL} --dport ${PVPN_PORT} -j ACCEPT
 
 # allow proton0, tcp, 443
 # this part is in update-resolv-conf up:

@@ -1,12 +1,12 @@
 version: '3.7'
 
 services:
-  protonvpn:
+  pvpn:
     build: .
     ports: ['1090:1080']
     cap_add:
       - NET_ADMIN
     environment:
-      - PROTONVPN_USERNAME=${PROTONVPN_USERNAME}
-      - PROTONVPN_PASSWORD=${PROTONVPN_PASSWORD}
-      - PROTONVPN_SERVER=CH-UK#1
+      - PVPN_USERNAME=${PVPN_USERNAME}
+      - PVPN_PASSWORD=${PVPN_PASSWORD}
+      - PVPN_SERVER=CH-UK#1

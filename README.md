@@ -21,12 +21,12 @@ https://account.protonvpn.com/account#openvpn
 nano .env
 ```
 ```
-PROTONVPN_USERNAME=MhDEyyypW76rpujJSCw63xGTqjk3WlBS
-PROTONVPN_PASSWORD=Nuh2vpYKLqe0n8V9slq0EbXLfUpo5ysb
+PVPN_USERNAME=MhDEyyypW76rpujJSCw63xGTqjk3WlBS
+PVPN_PASSWORD=Nuh2vpYKLqe0n8V9slq0EbXLfUpo5ysb
 ```
 
 - If you need different credentials for a container, override `.env` file:\
-`docker run`: use `-e PROTONVPN_USERNAME=abc` and `-e PROTONVPN_PASSWORD=abc`.\
+`docker run`: use `-e PVPN_USERNAME=abc` and `-e PVPN_PASSWORD=abc`.\
 `docker-compose`: change the enviroment variables in `docker-compose.yml`.
 
 - To use NetShield DNS, append a suffix to your username:\
@@ -46,7 +46,7 @@ Add `-d` to run in background.
 ## Run without Compose
 ```
 docker run -it --cap-add=NET_ADMIN --env-file=.env -p 1090:1080 \
-  -e PROTONVPN_SERVER=CH-UK#1 \
+  -e PVPN_SERVER=CH-UK#1 \
   $(docker build -q .)
 ```
 Add `-d` to run in background.\
@@ -60,7 +60,7 @@ In case you want to build without immediately run:
 docker build -t protonsocks .
 
 docker run -it --cap-add=NET_ADMIN --env-file=.env -p 1090:1080 \
-  -e PROTONVPN_SERVER=CH-UK#1 \
+  -e PVPN_SERVER=CH-UK#1 \
   protonsocks
 ```
 
