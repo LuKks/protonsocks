@@ -17,8 +17,13 @@ if [ -z "$PROTONVPN_IP" ]; then
 fi
 
 # generate auth file
-echo "${PROTONVPN_USERNAME}" >> /opt/auth.txt
-echo "${PROTONVPN_PASSWORD}" >> /opt/auth.txt
+if [ -n "$PROTONVPN_USERNAME" ] && [ -n "$PROTONVPN_PASSWORD" ]; then
+  echo "using auth from inline env"
+  echo -n "${PROTONVPN_USERNAME}" > /opt/auth.txt
+  echo "${PROTONVPN_PASSWORD}" >> /opt/auth.txt
+else
+  echo "using global auth.txt file"
+fi
 chmod 600 /opt/auth.txt
 
 /opt/killswitch.sh

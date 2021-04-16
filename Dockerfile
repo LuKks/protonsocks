@@ -18,6 +18,7 @@ COPY danted.sh /opt/
 RUN chmod a+x /opt/danted.sh
 
 COPY any.ovpn /opt/
+COPY auth.txt /opt/
 
 COPY update-resolv-conf /etc/openvpn/
 RUN chmod +x /etc/openvpn/update-resolv-conf

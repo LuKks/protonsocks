@@ -15,6 +15,15 @@ Get your OpenVPN / IKEv2 credentials:\
 https://account.protonvpn.com/account#openvpn
 
 Edit the enviroment variables in `docker-compose.yml` file with your credentials.
+- Edit `auth.txt` file for global setting, username and password:\
+```
+nano auth.txt
+```
+```
+MhDEyyypW76rpujJSCw63xGTqjk3WlBS
+Nuh2vpYKLqe0n8V9slq0EbXLfUpo5ysb
+```
+
 
 To use NetShield DNS, append a suffix to your username:\
 Block malware: `+f1`\
