@@ -7,7 +7,6 @@ services:
     privileged: true
     devices:
       - /dev/net/tun:/dev/net/tun
-      - /etc/localtime:/etc/localtime
     cap_add:
       - NET_ADMIN
     environment:
