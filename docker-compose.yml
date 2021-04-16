@@ -4,9 +4,6 @@ services:
   protonvpn:
     build: .
     ports: ['1090:1080']
-    privileged: true
-    devices:
-      - /dev/net/tun:/dev/net/tun
     cap_add:
       - NET_ADMIN
     environment:
