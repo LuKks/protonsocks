@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -euo pipefail
 
 if ! pgrep -x "danted" > /dev/null; then
     danted -D -N 10

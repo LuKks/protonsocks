@@ -1,3 +1,5 @@
+set -euo pipefail
+
 # empty dns
 echo "" > /etc/resolv.conf
 
