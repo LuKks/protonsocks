@@ -32,7 +32,7 @@ Add `-d` to run in background.
 
 ## Run without Compose
 ```
-docker run -it --privileged -p 1090:1080 \
+docker run -it --cap-add=NET_ADMIN --device=/dev/net/tun -p 1090:1080 \
   -e PROTONVPN_USERNAME=MhDEyyypW76rpujJSCw63xGTqjk3WlBS \
   -e PROTONVPN_PASSWORD=Nuh2vpYKLqe0n8V9slq0EbXLfUpo5ysb \
   -e PROTONVPN_SERVER=CH-MX#1 \
@@ -40,14 +40,14 @@ docker run -it --privileged -p 1090:1080 \
 ```
 Add `-d` to run in background.\
 Add `--restart=always` to start automatically on system boot.\
-Add `--name protonsocks_ch_mx_1` to set a container name.
+Add `--name=protonsocks_ch_mx_1` to set a container name.
 
 ### Build and Run
 In case you want to build without immediately run:
 ```
 docker build -t protonsocks .
 
-docker run -it --privileged -p 1090:1080 \
+docker run -it --cap-add=NET_ADMIN --device=/dev/net/tun -p 1090:1080 \
   -e PROTONVPN_USERNAME=MhDEyyypW76rpujJSCw63xGTqjk3WlBS \
   -e PROTONVPN_PASSWORD=Nuh2vpYKLqe0n8V9slq0EbXLfUpo5ysb \
   -e PROTONVPN_SERVER=CH-MX#1 \
