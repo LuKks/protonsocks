@@ -22,9 +22,6 @@ COPY any.ovpn /opt/
 COPY update-resolv-conf /etc/openvpn/
 RUN chmod +x /etc/openvpn/update-resolv-conf
 
-# should not leak
-#RUN cat /etc/hosts && true
-
 COPY disable_ipv6.conf /etc/sysctl.d/
 
 COPY entrypoint.sh /opt/
