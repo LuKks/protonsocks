@@ -21,7 +21,7 @@ https://account.protonvpn.com/account#openvpn
 nano .env
 ```
 ```
-PVPN_USERNAME=MhDEyyypW76rpujJSCw63xGTqjk3WlBS
+PVPN_USERNAME=MhDEyyypW76rpujJ
 PVPN_PASSWORD=Nuh2vpYKLqe0n8V9slq0EbXLfUpo5ysb
 ```
 
@@ -32,7 +32,7 @@ PVPN_PASSWORD=Nuh2vpYKLqe0n8V9slq0EbXLfUpo5ysb
 - To use NetShield DNS, append a suffix to your username:\
 Block malware: `+f1`\
 Block malware, ads and trackers: `+f2`\
-For example: `MhDEyyypW76rpujJSCw63xGTqjk3WlBS+f2`
+For example: `MhDEyyypW76rpujJ+f2`
 
 - Default ProtonVPN server is `CH-UK#1`, it also can be changed.
 
