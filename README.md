@@ -45,7 +45,6 @@ Add `-d` to run in background.
 
 ## Run without Compose
 ```
-docker run -it --cap-add=NET_ADMIN -p 1090:1080 \
 docker run -it --cap-add=NET_ADMIN --env-file=.env -p 1090:1080 \
   -e PROTONVPN_SERVER=CH-UK#1 \
   $(docker build -q .)
