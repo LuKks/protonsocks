@@ -16,7 +16,7 @@ sudo apt install docker-compose
 - Get your OpenVPN / IKEv2 credentials:\
 https://account.protonvpn.com/account#openvpn
 
-- Edit `auth.txt` file for global setting, username and password:\
+- Edit `auth.txt` file for global setting, username and password:
 ```
 nano auth.txt
 ```
