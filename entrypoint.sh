@@ -12,6 +12,7 @@ fi
 # generate auth file
 echo "${PROTONVPN_USERNAME}" >> /opt/auth.txt
 echo "${PROTONVPN_PASSWORD}" >> /opt/auth.txt
+chmod 600 /opt/auth.txt
 
 /opt/killswitch.sh
 
