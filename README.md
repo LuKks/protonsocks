@@ -32,7 +32,7 @@ Add `-d` to run in background.
 
 ## Run without Compose
 ```
-docker run -it --cap-add=NET_ADMIN --device=/dev/net/tun -p 1090:1080 \
+docker run -it --cap-add=NET_ADMIN -p 1090:1080 \
   -e PROTONVPN_USERNAME=MhDEyyypW76rpujJSCw63xGTqjk3WlBS \
   -e PROTONVPN_PASSWORD=Nuh2vpYKLqe0n8V9slq0EbXLfUpo5ysb \
   -e PROTONVPN_SERVER=CH-MX#1 \
@@ -47,7 +47,7 @@ In case you want to build without immediately run:
 ```
 docker build -t protonsocks .
 
-docker run -it --cap-add=NET_ADMIN --device=/dev/net/tun -p 1090:1080 \
+docker run -it --cap-add=NET_ADMIN -p 1090:1080 \
   -e PROTONVPN_USERNAME=MhDEyyypW76rpujJSCw63xGTqjk3WlBS \
   -e PROTONVPN_PASSWORD=Nuh2vpYKLqe0n8V9slq0EbXLfUpo5ysb \
   -e PROTONVPN_SERVER=CH-MX#1 \

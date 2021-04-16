@@ -2,6 +2,13 @@
 
 set -euo pipefail
 
+# create tun device
+mkdir -p /dev/net
+if [ ! -c /dev/net/tun ]; then
+  mknod /dev/net/tun c 10 200
+fi
+chmod 666 /dev/net/tun
+
 # get server ip
 export PROTONVPN_IP=$(jq -r ".LogicalServers[] | select(.Name == \"${PROTONVPN_SERVER}\").Servers[0].EntryIP" /opt/servers.json)
 if [ -z "$PROTONVPN_IP" ]; then
