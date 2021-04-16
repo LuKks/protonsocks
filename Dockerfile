@@ -10,6 +10,9 @@ ENV PROTONVPN_PROTOCOL=tcp
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y dante-server openvpn bash openresolv iptables curl jq
 
+# get servers list
+RUN curl https://api.protonmail.ch/vpn/logicals > /opt/servers.json
+
 COPY danted.conf /etc/
 COPY danted.sh /opt/
 RUN chmod a+x /opt/danted.sh
@@ -29,8 +32,5 @@ RUN chmod a+x /opt/entrypoint.sh
 
 COPY killswitch.sh /opt/
 RUN chmod a+x /opt/killswitch.sh
-
-# get servers list
-RUN curl https://api.protonmail.ch/vpn/logicals > /opt/servers.json
 
 ENTRYPOINT ["/opt/entrypoint.sh"]
