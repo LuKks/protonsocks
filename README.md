@@ -25,7 +25,7 @@ MhDEyyypW76rpujJSCw63xGTqjk3WlBS
 Nuh2vpYKLqe0n8V9slq0EbXLfUpo5ysb
 ```
 
-- In case you need different or specific credentials for containers:\
+- Later, in case you need different or specific credentials for containers:\
 Edit the enviroment in `docker-compose.yml` with the credentials.\
 Enviroment variables overrides `auth.txt` file.
 
