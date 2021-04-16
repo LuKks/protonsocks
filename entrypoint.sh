@@ -10,11 +10,14 @@ fi
 chmod 666 /dev/net/tun
 
 # get server ip
-export PROTONVPN_IP=$(jq -r ".LogicalServers[] | select(.Name == \"${PROTONVPN_SERVER}\").Servers[0].EntryIP" /opt/servers.json)
-if [ -z "$PROTONVPN_IP" ]; then
-  echo "not found server ${PROTONVPN_SERVER}"
+echo "searching server ip for ${PROTONVPN_SERVER}"
+export PROTONVPN_IP=$(jq -r "[.LogicalServers[] | select(.Status == 1) | select(.Name == \"${PROTONVPN_SERVER}\").Servers[] | select(.Status == 1)][0].EntryIP" /opt/servers.json)
+if [ -z "$PROTONVPN_IP" ] || [ "$PROTONVPN_IP" == "null" ]; then
+  echo "not found available server with status 1 named ${PROTONVPN_SERVER}"
+  echo "rebuild image in case you know the server is actually available"
   exit 1
 fi
+echo "found server ip ${PROTONVPN_IP} (EntryIP)"
 
 # generate auth file
 echo "${PROTONVPN_USERNAME}" >> /opt/auth.txt
