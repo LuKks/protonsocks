@@ -32,7 +32,7 @@ PVPN_PASSWORD=Nuh2vpYKLqe0n8V9slq0EbXLfUpo5ysb
 - To use NetShield DNS, append a suffix to your username:\
 Block malware: `+f1`\
 Block malware, ads and trackers: `+f2`\
-For example: `MhDEyyypW76rpujJ+f2`
+For example: `PVPN_USERNAME=MhDEyyypW76rpujJ+f1`
 
 - Default ProtonVPN server is `CH-UK#1`, it also can be changed.
 
