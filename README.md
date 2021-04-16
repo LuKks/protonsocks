@@ -26,8 +26,8 @@ PROTONVPN_PASSWORD=Nuh2vpYKLqe0n8V9slq0EbXLfUpo5ysb
 ```
 
 - If you need different credentials for a container, override `.env` file:\
-`docker run`: Use `-e PROTONVPN_USERNAME=abc` and `-e PROTONVPN_PASSWORD=abc`.\
-`docker-compose`: Change the enviroment variables in `docker-compose.yml`.
+`docker run`: use `-e PROTONVPN_USERNAME=abc` and `-e PROTONVPN_PASSWORD=abc`.\
+`docker-compose`: change the enviroment variables in `docker-compose.yml`.
 
 - To use NetShield DNS, append a suffix to your username:\
 Block malware: `+f1`\
