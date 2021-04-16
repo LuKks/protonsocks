@@ -13,10 +13,10 @@ sudo apt install docker-compose
 ```
 
 ## Configuration
-- Get your OpenVPN / IKEv2 credentials:\
+1) Get your OpenVPN / IKEv2 credentials:\
 https://account.protonvpn.com/account#openvpn
 
-- Create `.env` file for global setting, username and password:
+2) Create `.env` file for global setting, username and password:
 ```
 nano .env
 ```
