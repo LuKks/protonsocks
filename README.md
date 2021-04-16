@@ -39,7 +39,7 @@ For example: `MhDEyyypW76rpujJ+f2`
 ## Run with Compose
 Later you can just build and run in foreground:
 ```
-docker-compose up --build
+docker-compose up
 ```
 Add `-d` to run in background.
 
