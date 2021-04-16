@@ -53,13 +53,5 @@ Add `-d` to run in background.\
 Add `--restart=always` to start automatically on system boot.\
 Build locally with `$(docker build -q .)` instead of `ghcr.io/lukks/protonsocks`.
 
-In case you want to build without immediately run:
-```
-docker build -t protonsocks .
-docker run -it --cap-add=NET_ADMIN --env-file=.env -p 1090:1080 \
-  -e PVPN_SERVER=CH-UK#1 \
-  protonsocks
-```
-
 ## License
 Code released under the [MIT License](https://github.com/LuKks/protonsocks/blob/master/LICENSE).
