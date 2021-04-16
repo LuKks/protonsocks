@@ -37,7 +37,7 @@ For example: `MhDEyyypW76rpujJ+f2`
 - Default ProtonVPN server is `CH-UK#1`, it also can be changed.
 
 ## Run with Compose
-Later you can just build and run in foreground:
+Later you can just run in foreground:
 ```
 docker-compose up
 ```
@@ -47,18 +47,15 @@ Add `-d` to run in background.
 ```
 docker run -it --cap-add=NET_ADMIN --env-file=.env -p 1090:1080 \
   -e PVPN_SERVER=CH-UK#1 \
-  $(docker build -q .)
+  ghcr.io/lukks/protonsocks
 ```
 Add `-d` to run in background.\
 Add `--restart=always` to start automatically on system boot.\
-Add `--name=protonsocks_ch_uk_1` to set a container name.\
-Can use `ghcr.io/lukks/protonsocks` instead of `$(docker build ...)`.
+Build locally with `$(docker build -q .)` instead of `ghcr.io/lukks/protonsocks`.
 
-### Build and Run
 In case you want to build without immediately run:
 ```
 docker build -t protonsocks .
-
 docker run -it --cap-add=NET_ADMIN --env-file=.env -p 1090:1080 \
   -e PVPN_SERVER=CH-UK#1 \
   protonsocks

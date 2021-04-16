@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   pvpn:
-    build: .
+    image: ghcr.io/lukks/protonsocks
     ports: ['1090:1080']
     cap_add:
       - NET_ADMIN
