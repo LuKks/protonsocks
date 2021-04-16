@@ -51,7 +51,8 @@ docker run -it --cap-add=NET_ADMIN --env-file=.env -p 1090:1080 \
 ```
 Add `-d` to run in background.\
 Add `--restart=always` to start automatically on system boot.\
-Add `--name=protonsocks_ch_uk_1` to set a container name.
+Add `--name=protonsocks_ch_uk_1` to set a container name.\
+Can use `ghcr.io/lukks/protonsocks` instead of `$(docker build ...)`.
 
 ### Build and Run
 In case you want to build without immediately run:
