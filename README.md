@@ -2,7 +2,7 @@
 
 Dockerized ProtonVPN
 
-![](https://img.shields.io/github/license/LuKks/protonsocks.svg)
+![](https://img.shields.io/github/v/release/LuKks/protonsocks) ![](https://img.shields.io/github/license/LuKks/protonsocks.svg)
 
 ## Install
 It requires Docker and Docker Compose:
