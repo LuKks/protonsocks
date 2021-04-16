@@ -41,7 +41,7 @@ Later you can just run in foreground:
 ```
 docker-compose up
 ```
-Add `-d` to run in background.
+Add `-d` to run in background.\
 Build locally with `build: .` instead of `image: ghcr.io/lukks/protonsocks`.
 
 ## Run without Compose
