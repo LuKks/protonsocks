@@ -24,6 +24,7 @@ echo "${PVPN_USERNAME}" >> /opt/auth.txt
 echo "${PVPN_PASSWORD}" >> /opt/auth.txt
 chmod 600 /opt/auth.txt
 
-/opt/killswitch.sh
+# empty dns
+echo "" > /etc/resolv.conf
 
 /usr/sbin/openvpn --config /opt/any.ovpn --auth-user-pass /opt/auth.txt --remote ${PVPN_IP} ${PVPN_PORT} ${PVPN_PROTOCOL} --dev proton0 --dev-type tun --auth-nocache

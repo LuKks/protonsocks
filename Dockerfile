@@ -8,7 +8,7 @@ ENV PVPN_PORT=443
 ENV PVPN_PROTOCOL=tcp
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y dante-server openvpn bash openresolv iptables curl jq
+    DEBIAN_FRONTEND=noninteractive apt-get install -y dante-server openvpn bash openresolv curl jq
 
 # get servers list
 RUN curl https://api.protonmail.ch/vpn/logicals > /opt/servers.json
@@ -26,8 +26,5 @@ COPY disable_ipv6.conf /etc/sysctl.d/
 
 COPY entrypoint.sh /opt/
 RUN chmod a+x /opt/entrypoint.sh
-
-COPY killswitch.sh /opt/
-RUN chmod a+x /opt/killswitch.sh
 
 ENTRYPOINT ["/opt/entrypoint.sh"]
